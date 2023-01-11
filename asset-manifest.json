@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/perfectcolors/static/css/main.e6c13ad2.css",
-    "main.js": "/perfectcolors/static/js/main.79d1a399.js",
-    "static/js/787.dcac25be.chunk.js": "/perfectcolors/static/js/787.dcac25be.chunk.js",
+    "main.js": "/perfectcolors/static/js/main.2e3e7b7e.js",
+    "static/js/787.6f8fa3c2.chunk.js": "/perfectcolors/static/js/787.6f8fa3c2.chunk.js",
     "index.html": "/perfectcolors/index.html",
     "main.e6c13ad2.css.map": "/perfectcolors/static/css/main.e6c13ad2.css.map",
-    "main.79d1a399.js.map": "/perfectcolors/static/js/main.79d1a399.js.map",
-    "787.dcac25be.chunk.js.map": "/perfectcolors/static/js/787.dcac25be.chunk.js.map"
+    "main.2e3e7b7e.js.map": "/perfectcolors/static/js/main.2e3e7b7e.js.map",
+    "787.6f8fa3c2.chunk.js.map": "/perfectcolors/static/js/787.6f8fa3c2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.79d1a399.js"
+    "static/js/main.2e3e7b7e.js"
   ]
 }
