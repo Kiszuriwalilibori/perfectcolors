@@ -58,6 +58,6 @@ Explanatory Notes
 
 2. Navigation in general, one can say it is too nested. Yeah, it might be simplier but wanted to make full use of Layout/Outlet features.
 
-3. Styling: While generally do not like MUI here took opportunity to use exclusively MUI (and what base React out-of-box styles are), just to gain some experience. Besides, styling is rather minimalistic by definition (or my idea of design);
+3. Navigation might look cumbersome but tried to cover most cases of user's input in browser navbar
 
-4.
+4. Styling: While generally do not like MUI here took opportunity to use exclusively MUI (and what base React out-of-box styles are), just to gain some experience. Besides, styling is rather minimalistic by definition (or my idea of design);

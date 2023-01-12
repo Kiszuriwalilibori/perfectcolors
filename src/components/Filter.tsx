@@ -11,7 +11,7 @@ import useDispatchAction from "../hooks/useDispatchAction";
 import { areColorsNotEmpty, getAllColorsIds } from "reduxware/selectors";
 
 const Filter = () => {
-    const [value, setValue] = useState("" as unknown as number);
+    const [value, setValue] = useState("");
     const { setFilterId } = useDispatchAction();
     const colorsLoaded = useSelector(areColorsNotEmpty);
     const allColors = useSelector(getAllColorsIds);
@@ -19,7 +19,7 @@ const Filter = () => {
 
     const clearInput = useCallback(
         () => {
-            setValue("" as unknown as number);
+            setValue("");
             setFilterId(null as unknown as number);
         },
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -29,21 +29,22 @@ const Filter = () => {
     const changeHandler = useCallback(
         (ev: { target: { value: unknown | number } }) => {
             if (!isNaN(ev.target.value as unknown as number)) {
-                setValue(ev.target.value as number);
+                setValue(ev.target.value as string);
                 const valueAsNumber = +(ev.target.value as unknown as number);
 
                 if (allColors.includes(valueAsNumber)) {
                     setFilterId(valueAsNumber);
                 } else {
                     clearInput();
-                    enqueueSnackbar(
-                        `Requested Id ${valueAsNumber} is out of scope  ${allColors[0]} -  ${allColors.at(
-                            -1
-                        )}  . Try with another Id`,
-                        {
-                            variant: "warning",
-                        }
-                    );
+                    valueAsNumber &&
+                        enqueueSnackbar(
+                            `Requested Id ${valueAsNumber} is out of scope  ${allColors[0]} -  ${allColors.at(
+                                -1
+                            )}  . Try with another Id`,
+                            {
+                                variant: "warning",
+                            }
+                        );
                 }
             }
         },
