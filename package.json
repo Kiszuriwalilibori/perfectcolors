@@ -6,6 +6,7 @@
     "dependencies": {
         "@emotion/react": "^11.10.5",
         "@emotion/styled": "^11.10.5",
+        "@loadable/component": "^5.15.2",
         "@mui/icons-material": "^5.11.0",
         "@mui/material": "^5.11.3",
         "@reduxjs/toolkit": "^1.9.1",
@@ -57,6 +58,7 @@
         ]
     },
     "devDependencies": {
+        "@types/loadable__component": "^5.13.4",
         "@types/lodash": "^4.14.191"
     }
 }

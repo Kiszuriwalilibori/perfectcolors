@@ -9,6 +9,7 @@ import { useSnackbar } from "notistack";
 import useDispatchAction from "../hooks/useDispatchAction";
 
 import { areColorsNotEmpty, getAllColorsIds } from "reduxware/selectors";
+import React from "react";
 
 const Filter = () => {
     const [value, setValue] = useState("");
@@ -57,6 +58,7 @@ const Filter = () => {
     }, [value]);
 
     if (!colorsLoaded) return null;
+
     return (
         <Stack direction="row" spacing={2} justifyContent="flex-start" alignItems="center">
             <TextField
@@ -73,4 +75,4 @@ const Filter = () => {
         </Stack>
     );
 };
-export default Filter;
+export default React.memo(Filter);

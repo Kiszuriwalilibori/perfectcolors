@@ -1,3 +1,4 @@
+import React from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -8,7 +9,7 @@ import TableRow from "@mui/material/TableRow";
 import { useEffect } from "react";
 import { Box } from "@mui/material";
 import { isEmpty } from "lodash";
-import { useSelector } from "react-redux";
+import { shallowEqual, useSelector } from "react-redux";
 
 import useDispatchAction from "hooks/useDispatchAction";
 
@@ -31,7 +32,7 @@ interface Props {
     pageNumber?: number;
 }
 
-export default function ColorsTable(props: Props) {
+function ColorsTable(props: Props) {
     const { pageNumber } = props;
     const colors = useSelector(getColorsForGivenPage);
     const { showModal } = useDispatchAction();
@@ -79,3 +80,5 @@ export default function ColorsTable(props: Props) {
         </TableContainer>
     );
 }
+
+export default React.memo(ColorsTable);

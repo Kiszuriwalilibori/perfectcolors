@@ -1,3 +1,4 @@
+import React from "react";
 import { Outlet } from "react-router-dom";
 
 import Filter from "./Filter";
@@ -12,4 +13,4 @@ const ColorsLayout = () => {
         </>
     );
 };
-export default ColorsLayout;
+export default React.memo(ColorsLayout);
