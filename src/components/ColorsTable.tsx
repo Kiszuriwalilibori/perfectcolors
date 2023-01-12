@@ -33,7 +33,6 @@ interface Props {
 
 export default function ColorsTable(props: Props) {
     const { pageNumber } = props;
-    console.log("propstable renders", pageNumber);
     const colors = useSelector(getColorsForGivenPage);
     const { showModal } = useDispatchAction();
     const { showCertainPage } = useDispatchAction();

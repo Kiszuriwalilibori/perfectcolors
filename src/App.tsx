@@ -17,6 +17,7 @@ import { Paths } from "./routes";
 import { fetchColors } from "./hooks/fetchColors";
 import { getArrayOfPageNumbers } from "./reduxware/selectors";
 import { numberToPathname } from "./helpers";
+import { InitialPage } from "./components/InitialPage";
 
 function App() {
     const navigate = useNavigate();
@@ -32,14 +33,25 @@ function App() {
     return (
         <Stack spacing={6} alignItems="center" justifyContent="center" marginBottom="24">
             <Header />
-            <NumericalInput />
+
             <Routes>
+                <Route path="/" element={<InitialPage />} />
                 {pageNumbers.map(item => (
-                    <Route path={numberToPathname(item)} element={<ColorsTable pageNumber={item} />} key={uuid()} />
+                    <Route
+                        path={numberToPathname(item)}
+                        element={
+                            <>
+                                <NumericalInput />
+                                <ColorsTable pageNumber={item} />
+                                <Navigation />
+                            </>
+                        }
+                        key={uuid()}
+                    />
                 ))}
                 <Route path={Paths.nopage} element={<NotFound />} />
             </Routes>
-            <Navigation />
+
             <Modal />
         </Stack>
     );
