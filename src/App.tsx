@@ -29,29 +29,29 @@ function App() {
         fetchColors(enqueueSnackbar);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
+    console.log(pageNumbers);
     return (
         <Stack spacing={6} alignItems="center" justifyContent="center" marginBottom="24">
             <Header />
-
             <Routes>
-                <Route path="/" element={<Home />} />
-                {pageNumbers.map(item => (
-                    <Route
-                        path={numberToPathname(item)}
-                        element={
-                            <>
-                                <Filter />
-                                <ColorsTable pageNumber={item} />
-                                <Navigation />
-                            </>
-                        }
-                        key={uuid()}
-                    />
-                ))}
+                <Route path="/">
+                    <Route index element={<Home />} />
+                    {pageNumbers.map(item => (
+                        <Route
+                            path={numberToPathname(item)}
+                            element={
+                                <>
+                                    <Filter />
+                                    <ColorsTable pageNumber={item} />
+                                    <Navigation />
+                                </>
+                            }
+                            key={uuid()}
+                        />
+                    ))}
+                </Route>
                 <Route path={Paths.nopage} element={<NotFound />} />
             </Routes>
-
             <Modal />
         </Stack>
     );
