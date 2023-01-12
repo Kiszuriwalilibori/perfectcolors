@@ -17,7 +17,7 @@ import { Paths } from "./routes";
 import { fetchColors } from "./hooks/fetchColors";
 import { getArrayOfPageNumbers } from "./reduxware/selectors";
 import { numberToPathname } from "./helpers";
-import { InitialPage } from "./components/InitialPage";
+import { Home } from "./components/Home";
 
 function App() {
     const navigate = useNavigate();
@@ -35,7 +35,7 @@ function App() {
             <Header />
 
             <Routes>
-                <Route path="/" element={<InitialPage />} />
+                <Route path="/" element={<Home />} />
                 {pageNumbers.map(item => (
                     <Route
                         path={numberToPathname(item)}

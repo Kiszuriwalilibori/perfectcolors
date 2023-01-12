@@ -1,5 +1,7 @@
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
-
+import ClearIcon from "@mui/icons-material/ClearOutlined";
 import { useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 
@@ -23,15 +25,29 @@ const NumericalInput = () => {
         [value]
     );
 
+    const clearInput = useCallback(
+        () => {
+            setValue("" as unknown as number);
+            setFilterId(null as unknown as number);
+        },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [value]
+    );
+
     return (
-        <TextField
-            id="standard-basic"
-            disabled={!colorsLoaded}
-            value={value}
-            onChange={changeHandler}
-            label="Wpisz Id"
-            variant="standard"
-        />
+        <Stack direction="row" spacing={2} justifyContent="flex-start" alignItems="center">
+            <TextField
+                id="standard-basic"
+                disabled={!colorsLoaded}
+                value={value}
+                onChange={changeHandler}
+                label="Wpisz Id"
+                variant="standard"
+            />
+            <Button disabled={!value} onClick={clearInput}>
+                <ClearIcon />
+            </Button>
+        </Stack>
     );
 };
 export default NumericalInput;

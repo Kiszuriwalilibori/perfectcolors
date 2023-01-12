@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { areColorsNotEmpty } from "../reduxware/selectors";
 
-export const InitialPage = () => {
+export const Home = () => {
     const readyToRedirect = useSelector(areColorsNotEmpty);
     const navigate = useNavigate();
     useEffect(() => {
