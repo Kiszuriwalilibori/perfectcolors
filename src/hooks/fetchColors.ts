@@ -1,8 +1,10 @@
-import { store } from "../AppProvider";
 import axios from "axios";
-import { baseURL } from "../settings";
-import { Colors, Color } from "../types";
+
+import { store } from "../AppProvider";
+import { baseURL } from "settings";
+import { Colors, Color } from "types";
 import { SnackbarMessage, OptionsObject, SnackbarKey } from "notistack";
+import { isOffline } from "helpers";
 
 let endpoints: string[] = [];
 
@@ -45,6 +47,12 @@ export const getAll = (messager: Function) => {
 export const fetchColors = (
     messager: (message: SnackbarMessage, options?: OptionsObject | undefined) => SnackbarKey
 ) => {
+    if (isOffline()) {
+        messager(`You have no internet connection. Try again some later`, {
+            variant: "warning",
+        });
+        return;
+    }
     messager("Fetching data initiated", { variant: "info" });
     axios
         .get(baseURL)
