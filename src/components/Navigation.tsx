@@ -34,6 +34,7 @@ const Navigation = () => {
         showNextPage();
         const newPathname = numberToPathname(currentDataPageNumber + 1);
         newPathname && navigate(newPathname);
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentDataPageNumber]);
 

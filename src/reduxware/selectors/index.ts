@@ -92,6 +92,13 @@ export const setArrayOfPageNumbers = (x: number) => {
     return result;
 };
 
+export const setAllColorsIds = (ary: Colors) => {
+    const result: number[] = [];
+    ary.forEach(item => result.push(item.id));
+
+    return result;
+};
+
 export const getFilteredColors = createSelector(getAllColors, getId, setFilteredColors);
 
 export const areColorsNotEmpty = createSelector(getAllColors, setAreColorsNotEmpty);
@@ -112,6 +119,8 @@ export const getColorsForGivenPage = createSelector(
 );
 
 export const getArrayOfPageNumbers = createSelector(getNumberOfPages, setArrayOfPageNumbers);
+export const getAllColorsIds = createSelector(getAllColors, setAllColorsIds);
 
 export { getCurrentPageNumber };
 export { getIsModalVisible };
+export { getAllColors };

@@ -1,4 +1,4 @@
 export function numberToPathname(nbr: number) {
-    const result = ("/" + nbr).toString();
+    const result = ("/colors/" + nbr).toString();
     return result;
 }
