@@ -6,7 +6,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import { useSelector } from "react-redux";
 
-import NumericalInput from "./components/NumericalInput";
+import Filter from "./components/Filter";
 import Navigation from "./components/Navigation";
 import Header from "./components/Header";
 import Modal from "./components/Modal";
@@ -41,7 +41,7 @@ function App() {
                         path={numberToPathname(item)}
                         element={
                             <>
-                                <NumericalInput />
+                                <Filter />
                                 <ColorsTable pageNumber={item} />
                                 <Navigation />
                             </>

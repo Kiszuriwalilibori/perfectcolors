@@ -51,3 +51,8 @@ added helpers for few simple operations, many variables renamed, readme initiate
 ### 0.1.2
 
 files in helpers dir rearranged
+
+Explanatory Notes
+
+1. Hash Router is because of GH Pages way of rendering
+2. Navigation and filer

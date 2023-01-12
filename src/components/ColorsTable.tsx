@@ -17,9 +17,9 @@ import { useEffect } from "react";
 const containerStyle = {
     width: "320px !important",
     margin: "0 auto",
-    border: "2px solid #000",
+    border: "2px solid #1565C0",
     padding: 2,
-    boxShadow: 24,
+    boxShadow: 6,
     paddingBottom: "25px",
 };
 

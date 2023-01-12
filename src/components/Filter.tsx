@@ -9,7 +9,7 @@ import useDispatchAction from "../hooks/useDispatchAction";
 
 import { areColorsNotEmpty } from "../reduxware/selectors";
 
-const NumericalInput = () => {
+const Filter = () => {
     const [value, setValue] = useState("" as unknown as number);
     const { setFilterId } = useDispatchAction();
     const colorsLoaded = useSelector(areColorsNotEmpty);
@@ -50,4 +50,4 @@ const NumericalInput = () => {
         </Stack>
     );
 };
-export default NumericalInput;
+export default Filter;
