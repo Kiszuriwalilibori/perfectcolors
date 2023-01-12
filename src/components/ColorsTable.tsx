@@ -47,9 +47,15 @@ export default function ColorsTable(props: Props) {
             <Table sx={{ ...tableStyle }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell>Id</TableCell>
-                        <TableCell align="right">Name</TableCell>
-                        <TableCell align="right">Year</TableCell>
+                        <TableCell>
+                            <b>Id</b>
+                        </TableCell>
+                        <TableCell align="right">
+                            <b>Name</b>
+                        </TableCell>
+                        <TableCell align="right">
+                            <b>Year</b>
+                        </TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
