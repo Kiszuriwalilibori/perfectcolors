@@ -2,7 +2,7 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import ClearIcon from "@mui/icons-material/ClearOutlined";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useSnackbar } from "notistack";
 
@@ -30,27 +30,32 @@ const Filter = () => {
         (ev: { target: { value: unknown | number } }) => {
             if (!isNaN(ev.target.value as unknown as number)) {
                 setValue(ev.target.value as string);
-                const valueAsNumber = +(ev.target.value as unknown as number);
-
-                if (allColors.includes(valueAsNumber)) {
-                    setFilterId(valueAsNumber);
-                } else {
-                    clearInput();
-                    valueAsNumber &&
-                        enqueueSnackbar(
-                            `Requested Id ${valueAsNumber} is out of scope  ${allColors[0]} -  ${allColors.at(
-                                -1
-                            )}  . Try with another Id`,
-                            {
-                                variant: "warning",
-                            }
-                        );
-                }
             }
         },
         // eslint-disable-next-line react-hooks/exhaustive-deps
         [value]
     );
+
+    useEffect(() => {
+        const valueAsNumber = +value;
+        if (allColors.includes(valueAsNumber)) {
+            setFilterId(valueAsNumber);
+        } else {
+            clearInput();
+            valueAsNumber &&
+                enqueueSnackbar(
+                    `Requested Id ${valueAsNumber} is out of scope  ${allColors[0]} -  ${allColors.at(
+                        -1
+                    )}  . Try with another Id`,
+                    {
+                        variant: "warning",
+                    }
+                );
+        }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [value]);
+
     if (!colorsLoaded) return null;
     return (
         <Stack direction="row" spacing={2} justifyContent="flex-start" alignItems="center">
