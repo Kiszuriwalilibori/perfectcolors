@@ -71,4 +71,6 @@ files in helpers dir rearranged
 
 4. Styling: While generally do not like MUI here took opportunity to use exclusively MUI (and what base React out-of-box styles are), just to gain some experience. Besides, styling is rather minimalistic by definition (or my idea of design);
 
-5. unknown type in filterSlice: i would rather avoid 0 whichi reasonably good Id; making exceptions for 0 would IMO seem hacky, then I took null though it means more code and assertions
+5. unknown type in filterSlice: i would rather avoid 0 whichi reasonably good Id; making exceptions for 0 would IMO seem hacky and a kind of magic number, then I took null though it means more code and assertions
+
+6. I decided to add fixed and not parameterised with :id routes in order to not have any problems with non existing - but typable -paths.
