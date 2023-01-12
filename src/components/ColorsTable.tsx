@@ -5,6 +5,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
+import { useEffect } from "react";
 import { Box } from "@mui/material";
 import { isEmpty } from "lodash";
 import { useSelector } from "react-redux";
@@ -12,7 +13,6 @@ import { useSelector } from "react-redux";
 import useDispatchAction from "hooks/useDispatchAction";
 
 import { getColorsForGivenPage } from "reduxware/selectors";
-import { useEffect } from "react";
 
 const containerStyle = {
     width: "320px !important",

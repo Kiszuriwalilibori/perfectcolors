@@ -52,7 +52,16 @@ added helpers for few simple operations, many variables renamed, readme initiate
 
 files in helpers dir rearranged
 
-Explanatory Notes
+### Steps to reproduce in local directory
+
+1. Create local directory
+   Now, open the directory with VSCcode and open new terminal, or being in this directory type the folllowing commands with editor of choice:
+2. git init
+3. git remote add origin https://github.com/Kiszuriwalilibori/perfectcolors.git
+4. git pull origin master
+5. npm install
+
+### Explanatory Notes
 
 1. Hash Router is because of GH Pages way of rendering
 
@@ -61,3 +70,5 @@ Explanatory Notes
 3. Navigation might look cumbersome but tried to cover most cases of user's input in browser navbar
 
 4. Styling: While generally do not like MUI here took opportunity to use exclusively MUI (and what base React out-of-box styles are), just to gain some experience. Besides, styling is rather minimalistic by definition (or my idea of design);
+
+5. unknown type in filterSlice: i would rather avoid 0 whichi reasonably good Id; making exceptions for 0 would IMO seem hacky, then I took null though it means more code and assertions
