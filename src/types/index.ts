@@ -12,6 +12,6 @@ export interface ModalItem {
     value: string | number;
 }
 
-export type PathKeys = "main" | "nopage" | "first";
+export type PathKeys = "main" | "nopage" | "first" | "previous";
 
 export { RootStateType } from "../AppProvider";

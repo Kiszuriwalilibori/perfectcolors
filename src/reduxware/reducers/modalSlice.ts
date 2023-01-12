@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { RootStateType } from "../../types";
+import { RootStateType } from "types";
 
 const initialState = { isVisible: false, colorId: 0 };
 

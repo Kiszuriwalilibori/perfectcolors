@@ -1,5 +1,5 @@
 import { createAction } from "@reduxjs/toolkit";
-import { Colors } from "../../types";
+import { Colors } from "types";
 
 export const clearColors = createAction("COLORS_CLEAR");
 export const setColors = createAction<Colors>("COLORS_SET");

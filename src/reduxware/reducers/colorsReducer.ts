@@ -1,6 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
 
-import { Colors, RootStateType } from "../../types";
+import { Colors, RootStateType } from "types";
 import { setColors, clearColors } from "../actionCreators";
 
 const initialState = { items: [] as Colors };

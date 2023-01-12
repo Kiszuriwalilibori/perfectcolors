@@ -7,10 +7,10 @@ import { useCallback } from "react";
 import { shallowEqual, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import useDispatchAction from "../hooks/useDispatchAction";
+import useDispatchAction from "hooks/useDispatchAction";
 
-import { numberToPathname } from "../helpers";
-import { getIsPreviousButtonVisible, getIsNextButtonVisible, getCurrentPageNumber } from "../reduxware/selectors";
+import { numberToPathname } from "helpers";
+import { getIsPreviousButtonVisible, getIsNextButtonVisible, getCurrentPageNumber } from "reduxware/selectors";
 
 const buttonStyle = {
     width: "150px",

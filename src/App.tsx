@@ -10,12 +10,13 @@ import Header from "./components/Header";
 import Modal from "./components/Modal";
 import ColorsTable from "./components/ColorsTable";
 import NotFound from "./components/NotFound";
+import Colors from "./components/Colors";
+import ColorsLayout from "./components/ColorsLayout";
 
 import { Paths } from "./routes";
-import { fetchColors } from "./hooks/fetchColors";
-import { areColorsNotEmpty, getArrayOfPageNumbers } from "./reduxware/selectors";
+import { fetchColors } from "hooks/fetchColors";
+import { areColorsNotEmpty, getArrayOfPageNumbers } from "reduxware/selectors";
 import { Home } from "./components/Home";
-import ColorsLayout from "./components/ColorsLayout";
 
 function App() {
     const navigate = useNavigate();
@@ -24,12 +25,11 @@ function App() {
     const readyToRedirect = useSelector(areColorsNotEmpty);
 
     useEffect(() => {
-        readyToRedirect && navigate("/colors/1");
+        readyToRedirect && navigate(Paths.first);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [readyToRedirect]);
 
     useEffect(() => {
-        //navigate(Paths.first);
         fetchColors(enqueueSnackbar);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
@@ -41,6 +41,7 @@ function App() {
                 <Route path="/">
                     <Route index element={<Home />} />
                     <Route path="/colors" element={<ColorsLayout />}>
+                        <Route index element={<Colors />}></Route>
                         {pageNumbers.map(item => (
                             <Route
                                 path={item.toString()}

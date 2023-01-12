@@ -8,7 +8,7 @@ import { useSnackbar } from "notistack";
 
 import useDispatchAction from "../hooks/useDispatchAction";
 
-import { areColorsNotEmpty, getAllColorsIds } from "../reduxware/selectors";
+import { areColorsNotEmpty, getAllColorsIds } from "reduxware/selectors";
 
 const Filter = () => {
     const [value, setValue] = useState("" as unknown as number);
@@ -50,7 +50,7 @@ const Filter = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
         [value]
     );
-
+    if (!colorsLoaded) return null;
     return (
         <Stack direction="row" spacing={2} justifyContent="flex-start" alignItems="center">
             <TextField

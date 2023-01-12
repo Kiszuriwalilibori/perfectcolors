@@ -9,9 +9,9 @@ import { Box } from "@mui/material";
 import { isEmpty } from "lodash";
 import { useSelector } from "react-redux";
 
-import useDispatchAction from "../hooks/useDispatchAction";
+import useDispatchAction from "hooks/useDispatchAction";
 
-import { getColorsForGivenPage } from "../reduxware/selectors";
+import { getColorsForGivenPage } from "reduxware/selectors";
 import { useEffect } from "react";
 
 const containerStyle = {

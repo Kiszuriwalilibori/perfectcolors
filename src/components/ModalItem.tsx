@@ -1,6 +1,6 @@
 import Stack from "@mui/material/Stack";
 
-import { ModalItem } from "../types";
+import { ModalItem } from "types";
 
 const ModalDataItem = (props: ModalItem) => {
     const { name, value } = props;

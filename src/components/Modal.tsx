@@ -6,10 +6,10 @@ import { shallowEqual, useSelector } from "react-redux";
 import { isEmpty } from "lodash";
 import { Divider, Stack } from "@mui/material";
 
-import useDispatchAction from "../hooks/useDispatchAction";
+import useDispatchAction from "hooks/useDispatchAction";
 import ModalDataItem from "./ModalItem";
 
-import { getSelectedColorModalData, getIsModalVisible } from "../reduxware/selectors";
+import { getSelectedColorModalData, getIsModalVisible } from "reduxware/selectors";
 
 const style = {
     position: "absolute" as "absolute",

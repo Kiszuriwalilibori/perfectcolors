@@ -1,15 +1,14 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { isEmpty } from "lodash";
 
-import { fieldTolabel } from "../../helpers";
-import { numberToPathname } from "../../helpers/numberToPathname";
+import { fieldTolabel } from "helpers";
 
 import { getAllColors } from "../reducers/colorsReducer";
 import { getId } from "../reducers/filterSlice";
 import { getCurrentPageNumber } from "../reducers/pageSlice";
 import { getModalColorId, getIsModalVisible } from "../reducers/modalSlice";
-import { Colors, ModalItem } from "../../types";
-import { itemsPerPage } from "../../settings";
+import { Colors, ModalItem } from "types";
+import { itemsPerPage } from "settings";
 
 function setFilteredColors(ary: Colors, id: number) {
     if (!id) {
