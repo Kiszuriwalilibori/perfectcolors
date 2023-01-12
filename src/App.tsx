@@ -38,7 +38,7 @@ function App() {
                     <Route index element={<Home />} />
                     {pageNumbers.map(item => (
                         <Route
-                            path={numberToPathname(item)}
+                            path={item.toString()}
                             element={
                                 <>
                                     <Filter />
