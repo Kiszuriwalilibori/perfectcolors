@@ -73,6 +73,6 @@ files in helpers dir rearranged
 
 5. unknown type in filterSlice: i would rather avoid 0 whichi reasonably good Id; making exceptions for 0 would IMO seem hacky and a kind of magic number, then I took null though it means more code and assertions
 
-6. I decided to add fixed and not parameterised with :id routes in order to not have any problems with non existing - but typable -paths.
+6. I decided to add fixed and not parameterised with :id routes in order to not have any problems with non existing - but typable -paths. Basically I could check within component wheteher the URL is OK and render accordingly, but have chosesn that method rather (IMO it is not dity of component to decide wheteher to render proper content or info of no existsing page). However, that coud be overcome with HOC over component deciding whta to render. Anyway, took that way as seem more straightforward.
 
 7. Both reducers and slices: pereferred are slices, however in fetch function one must use action names which should be made up to uppercase pattern rather.
