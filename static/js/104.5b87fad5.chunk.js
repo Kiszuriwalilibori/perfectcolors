@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkperfectcolors=self.webpackChunkperfectcolors||[]).push([[104],{2104:function(e,u,c){c.r(u);var f=c(2791),n=c(5048),r=c(7689),t=c(8806),s=c(1381);u.default=function(){var e=(0,n.v9)(t.uk),u=(0,r.s0)();return(0,f.useEffect)((function(){e&&u(s.n.first)}),[e]),null}}}]);
+//# sourceMappingURL=104.5b87fad5.chunk.js.map
