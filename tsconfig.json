@@ -23,7 +23,8 @@
             "settings/*": ["settings/*"],
             "helpers/*": ["helpers/*"],
             "reduxware/selectors/*": ["reduxware/selectors/*"],
-            "routes/*": ["routes/*"]
+            "routes/*": ["routes/*"],
+            "styles/*": ["styles/*"]
         }
     },
     "include": ["src"]
