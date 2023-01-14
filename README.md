@@ -2,6 +2,20 @@
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
+## Notes for assessor
+
+1. Hash Router is because of GH Pages way of rendering
+
+2. Navigation in general, one can say it is too nested. Yeah, it might be simplier, but wanted to make full use of Layout/Outlet features, and is ready to add new subpage on the level of colors - scalability
+
+3. Navigation might look cumbersome but tried to cover most cases of user's input in browser navbar
+
+4. Styling: While generally do not like MUI here took opportunity to use exclusively MUI (and what base React out-of-box styles are), just to gain some experience. Besides, styling is rather minimalistic by definition (or my idea of design);
+
+5. I decided to add fixed and not parameterised with :id routes in order to not have any problems with non existing - but typable -paths. Basically I could check within component wheteher the URL is OK and render accordingly, but have chosesn that method rather (IMO it is not dity of component to decide wheteher to render proper content or info of no existsing page). However, that coud be overcome with HOC over component deciding whta to render. Anyway, took that way as seem more straightforward.
+
+6. Both reducers and slices in one app: preferred are slices, however in fetch function one must use action names which should be made up to uppercase pattern rather.
+
 ## Objective of this project
 
 -   Demonstrate knowledge of React, Redux, Router
@@ -60,19 +74,3 @@ files in helpers dir rearranged
 3. git remote add origin https://github.com/Kiszuriwalilibori/perfectcolors.git
 4. git pull origin master
 5. npm install
-
-### Explanatory Notes
-
-1. Hash Router is because of GH Pages way of rendering
-
-2. Navigation in general, one can say it is too nested. Yeah, it might be simplier but wanted to make full use of Layout/Outlet features.
-
-3. Navigation might look cumbersome but tried to cover most cases of user's input in browser navbar
-
-4. Styling: While generally do not like MUI here took opportunity to use exclusively MUI (and what base React out-of-box styles are), just to gain some experience. Besides, styling is rather minimalistic by definition (or my idea of design);
-
-5. unknown type in filterSlice: i would rather avoid 0 whichi reasonably good Id; making exceptions for 0 would IMO seem hacky and a kind of magic number, then I took null though it means more code and assertions
-
-6. I decided to add fixed and not parameterised with :id routes in order to not have any problems with non existing - but typable -paths. Basically I could check within component wheteher the URL is OK and render accordingly, but have chosesn that method rather (IMO it is not dity of component to decide wheteher to render proper content or info of no existsing page). However, that coud be overcome with HOC over component deciding whta to render. Anyway, took that way as seem more straightforward.
-
-7. Both reducers and slices: pereferred are slices, however in fetch function one must use action names which should be made up to uppercase pattern rather.

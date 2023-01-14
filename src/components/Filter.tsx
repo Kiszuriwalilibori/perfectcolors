@@ -21,7 +21,7 @@ const Filter = () => {
     const clearInput = useCallback(
         () => {
             setValue("");
-            setFilterId(null as unknown as number);
+            setFilterId(0);
         },
         // eslint-disable-next-line react-hooks/exhaustive-deps
         [value]
