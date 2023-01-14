@@ -20,7 +20,7 @@ const NotFound = () => {
     const navigate = useNavigate();
     setTimeout(() => {
         navigate(-1);
-    }, 2000);
+    }, 3000);
     return (
         <Box sx={{ ...style, width: 300 }}>
             <h2>Ojejku! Strony o adresie "{decodeURIComponent(window.location.href)}" po prostu nie ma &#128549;</h2>

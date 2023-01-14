@@ -1,4 +1,5 @@
 import React from "react";
+import uuid from "react-uuid";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -14,6 +15,7 @@ import { shallowEqual, useSelector } from "react-redux";
 import useDispatchAction from "hooks/useDispatchAction";
 
 import { getColorsForGivenPage } from "reduxware/selectors";
+import { colorsTableFields, colorsTableHeaders } from "settings";
 
 const containerStyle = {
     width: "320px !important",
@@ -32,6 +34,8 @@ interface Props {
     pageNumber?: number;
 }
 
+//const pr ={component="th", scope="row"}
+
 function ColorsTable(props: Props) {
     const { pageNumber } = props;
     const colors = useSelector(getColorsForGivenPage);
@@ -42,21 +46,17 @@ function ColorsTable(props: Props) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pageNumber]);
     if (!colors || isEmpty(colors)) return null;
-
+    console.log(colorsTableFields);
     return (
         <TableContainer sx={{ ...containerStyle }} component={Box}>
             <Table sx={{ ...tableStyle }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell>
-                            <b>Id</b>
-                        </TableCell>
-                        <TableCell align="right">
-                            <b>Name</b>
-                        </TableCell>
-                        <TableCell align="right">
-                            <b>Year</b>
-                        </TableCell>
+                        {colorsTableHeaders.map((label, index) => (
+                            <TableCell key={uuid()} align={index === 0 ? "left" : "right"}>
+                                <b>{label}</b>
+                            </TableCell>
+                        ))}
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -68,11 +68,15 @@ function ColorsTable(props: Props) {
                                 showModal(row.id);
                             }}
                         >
-                            <TableCell component="th" scope="row">
-                                {row.id}
-                            </TableCell>
-                            <TableCell align="right">{row.name}</TableCell>
-                            <TableCell align="right">{row.year}</TableCell>
+                            {colorsTableFields.map((field, index) => (
+                                <TableCell
+                                    key={uuid()}
+                                    component={index === 0 ? "th" : undefined}
+                                    scope={index === 0 ? "row" : undefined}
+                                >
+                                    {row[field]}
+                                </TableCell>
+                            ))}
                         </TableRow>
                     ))}
                 </TableBody>

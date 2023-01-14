@@ -1,4 +1,7 @@
-export interface Color {
+type C = {
+    [key: string]: number | string;
+};
+export interface Color extends C {
     id: number;
     name: string;
     year: number;
